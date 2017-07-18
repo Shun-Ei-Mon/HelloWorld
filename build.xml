@@ -62,7 +62,15 @@
             <classpath refid="JUnitTesting.classpath"/>
         </junit>
     </target>
-    <target name="junitreport" depends="JUnitTest">
+    <target name="JUnitTesting">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.junit.mm.JUnitTest" todir="${junit.output.dir}"/>
+            <classpath refid="JUnitTesting.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
         <junitreport todir="${junit.output.dir}">
             <fileset dir="${junit.output.dir}">
                 <include name="TEST-*.xml"/>
