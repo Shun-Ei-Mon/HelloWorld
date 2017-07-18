@@ -70,7 +70,7 @@
             <classpath refid="JUnitTesting.classpath"/>
         </junit>
     </target>
-    <target name="junitreport">
+    <target name="junitreport" depends="JUnitTesting">
         <junitreport todir="${junit.output.dir}">
             <fileset dir="${junit.output.dir}">
                 <include name="TEST-*.xml"/>
